@@ -44,6 +44,7 @@
 
         @include('partials.footer')
 
+        <script type="text/javascript" src="/js/../bower_components/jquery/jquery.js"></script>
         <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
         <script>
             (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
