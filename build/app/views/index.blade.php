@@ -49,7 +49,7 @@
     <div>
         <strong class="required">{{ Form::label('state', 'State') }}</strong>
 
-        {{ Form::select('state', array('ACT','NSW','NT','QLD','SA','TAS','VIC','WA'), Input::old('state'), array('required')) }}
+        {{ Form::select('state', array('ACT' => 'ACT','NSW' => 'NSW','NT' => 'NT','QLD' => 'QLD','SA' => 'SA','TAS' => 'TAS','VIC' => 'VIC','WA' => 'WA'), Input::old('state'), array('required')) }}
     </div>
     <div>
         <strong class="required">{{ Form::label('postcode', 'Postcode') }}</strong>
