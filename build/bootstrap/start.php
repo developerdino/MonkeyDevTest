@@ -24,10 +24,12 @@ $app = new Illuminate\Foundation\Application;
 |
 */
 
-$env = $app->detectEnvironment(array(
-	'local' => array('*.dev'),
-	'production' => array('monkeydevtest.com'),
-));
+$env = $app->detectEnvironment(function()
+{
+
+	return $_SERVER['SERVER_NAME'] == 'monkeydevtest.dev' ? 'local' : 'production';
+
+});
 
 /*
 |--------------------------------------------------------------------------
