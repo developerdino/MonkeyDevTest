@@ -12,3 +12,15 @@ strong {
 	width: 250px;
 	display: inline-block;
 }
+
+.required:after {
+	content: "*";
+}
+
+.error {
+	margin: 5px;
+	border: 1px solid lightgray;
+	border-radius: 5px;
+	background-color: #FFDBDB;
+	padding: 10px;
+}

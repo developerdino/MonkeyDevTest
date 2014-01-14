@@ -9,7 +9,7 @@ class MonkeyController extends \BaseController {
 	 */
 	public function index()
 	{
-		$monkeyform = new MonkeyForm;
+		$monkeyform = new Monkey\Models\MonkeyForm;
 
 		return View::make('index')->with('monkeyform', $monkeyform);
 	}
@@ -21,7 +21,14 @@ class MonkeyController extends \BaseController {
 	 */
 	public function store()
 	{
-		//
+		$monkeyform = new Monkey\Models\MonkeyForm(Input::all());
+
+		if (!$monkeyform->validate()) {
+			return View::make('index')->with('monkeyform', $monkeyform)->withErrors($monkeyform->validator);
+		} else {
+			$monkeyform->save();
+			return View::make('thanks')->with('monkeyform', $monkeyform);
+		}
 	}
 
 }
